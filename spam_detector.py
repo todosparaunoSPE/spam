@@ -64,7 +64,7 @@ def trainWord_generator():
     for directories, subdirectories, files in os.walk(train_path):
         for filename in files:
             full_path = os.path.join(directories, filename)
-            with open(full_path) as target_file:
+            with open(full_path, encoding="latin-1") as target_file:
                 data = target_file.read()
                 words = text_parser(data)
                 for word in words:
